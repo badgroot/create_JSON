@@ -1,8 +1,8 @@
 /*
  *  main.cpp
  *  Program to Create JSON
- *  Created on: May 23, 2017
- *  Author: kolban
+ *  Created on: Sept 23, 2018
+ *  Author: Manish
  */
 
 #include "freertos/FreeRTOS.h"
@@ -25,8 +25,6 @@ extern "C" {
 
 void json_creation() {
 
- 
-    
     root = cJSON_CreateObject();
     data = cJSON_CreateArray();
 
@@ -34,17 +32,14 @@ void json_creation() {
     cJSON_AddItemToObject(root, "ID", cJSON_CreateString("1"));
     cJSON_AddItemToObject(root, "TIMESTAMP", cJSON_CreateString("11:46"));
     cJSON_AddItemToArray(data, root);
-
 	
     data_json = cJSON_Print(data);
     printf("%s\n",data_json);
 	
 }
 
-
 void app_main(void)
 {
 	json_creation();
 
 }
-
